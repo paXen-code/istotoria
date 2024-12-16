@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://01do5ojya4a6"]
+
+[ext_resource type="Texture2D" uid="uid://beunpef8dhg5j" path="res://image/photo_2024-12-15_02-04-32.jpg" id="1_qki5d"]
+[ext_resource type="Script" path="res://script/chel_geroi_in.gd" id="1_scoo8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pd34p"]
+size = Vector2(347, 838)
+
+[node name="chel_geroi_in" type="CharacterBody2D"]
+process_mode = 1
+z_index = 2
+scale = Vector2(0.3, 0.3)
+script = ExtResource("1_scoo8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_qki5d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.5, 0)
+shape = SubResource("RectangleShape2D_pd34p")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.7, 0.7)
