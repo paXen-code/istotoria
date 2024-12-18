@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://beunpef8dhg5j"
-path="res://.godot/imported/photo_2024-12-15_02-04-32.jpg-397e3c617420288627e720735e727388.ctex"
+uid="uid://u5eiuc85lgwa"
+path="res://.godot/imported/внутри изба.png-a3f44922f3108528904a518dea7cf230.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://image/photo_2024-12-15_02-04-32.jpg"
-dest_files=["res://.godot/imported/photo_2024-12-15_02-04-32.jpg-397e3c617420288627e720735e727388.ctex"]
+source_file="res://image/внутри изба.png"
+dest_files=["res://.godot/imported/внутри изба.png-a3f44922f3108528904a518dea7cf230.ctex"]
 
 [params]
 

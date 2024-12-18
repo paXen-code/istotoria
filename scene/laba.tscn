@@ -1,0 +1,136 @@
+[gd_scene load_steps=7 format=3 uid="uid://cjg2td8ws7f5m"]
+
+[ext_resource type="Texture2D" uid="uid://c53obn4txg6o6" path="res://image/лаба.jpg" id="1_2odnm"]
+[ext_resource type="PackedScene" uid="uid://01do5ojya4a6" path="res://scene/chel_geroi_in.tscn" id="2_3b13b"]
+[ext_resource type="Texture2D" uid="uid://bptbu37byp1u5" path="res://image/icon.svg" id="3_nev30"]
+[ext_resource type="Texture2D" uid="uid://0m86c7r43n8a" path="res://image/time_machine.png" id="4_l0wng"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5rsne"]
+size = Vector2(4885, 159)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kugur"]
+radius = 98.0
+height = 300.0
+
+[node name="laba" type="Node2D"]
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(-653, -378)
+polygon = PackedVector2Array(-638, -300, -631, 1128, 2020, 1218, 2118, -458)
+
+[node name="Photo2024-12-1723-59-13" type="Sprite2D" parent="."]
+position = Vector2(-23, 1)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("1_2odnm")
+
+[node name="chel_geroi_in" parent="." instance=ExtResource("2_3b13b")]
+position = Vector2(161, 38)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="wall" type="StaticBody2D" parent="."]
+position = Vector2(-581, 1218)
+rotation = 0.349066
+scale = Vector2(0.08, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="wall"]
+visible = false
+position = Vector2(149.5, -933.5)
+scale = Vector2(38.2422, 1.27344)
+texture = ExtResource("3_nev30")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall"]
+position = Vector2(182, -942)
+shape = SubResource("RectangleShape2D_5rsne")
+
+[node name="wall2" type="StaticBody2D" parent="."]
+position = Vector2(215, 1282)
+rotation = -0.174533
+scale = Vector2(0.0706676, 0.990918)
+
+[node name="Sprite2D" type="Sprite2D" parent="wall2"]
+visible = false
+position = Vector2(149.5, -933.5)
+scale = Vector2(38.2422, 1.27344)
+texture = ExtResource("3_nev30")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall2"]
+position = Vector2(182, -942)
+shape = SubResource("RectangleShape2D_5rsne")
+
+[node name="wall3" type="StaticBody2D" parent="."]
+position = Vector2(1243, 1774)
+rotation = -0.698132
+scale = Vector2(0.117005, 2.68857)
+
+[node name="Sprite2D" type="Sprite2D" parent="wall3"]
+visible = false
+position = Vector2(149.5, -933.5)
+scale = Vector2(38.2422, 1.27344)
+texture = ExtResource("3_nev30")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall3"]
+position = Vector2(182, -942)
+shape = SubResource("RectangleShape2D_5rsne")
+
+[node name="wall4" type="StaticBody2D" parent="."]
+position = Vector2(923, 961)
+rotation = -0.698132
+scale = Vector2(0.0706676, 0.990918)
+
+[node name="Sprite2D" type="Sprite2D" parent="wall4"]
+visible = false
+position = Vector2(149.5, -933.5)
+scale = Vector2(38.2422, 1.27344)
+texture = ExtResource("3_nev30")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall4"]
+position = Vector2(182, -942)
+shape = SubResource("RectangleShape2D_5rsne")
+
+[node name="wall5" type="StaticBody2D" parent="."]
+position = Vector2(1367, -177)
+rotation = -1.74533
+scale = Vector2(0.0706676, 0.990918)
+
+[node name="Sprite2D" type="Sprite2D" parent="wall5"]
+visible = false
+position = Vector2(149.5, -933.5)
+scale = Vector2(38.2422, 1.27344)
+texture = ExtResource("3_nev30")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall5"]
+position = Vector2(182, -942)
+scale = Vector2(1.20634, 1.40878)
+shape = SubResource("RectangleShape2D_5rsne")
+
+[node name="wall6" type="StaticBody2D" parent="."]
+position = Vector2(558, -1303)
+rotation = 0.349066
+scale = Vector2(-0.118339, -1.15864)
+
+[node name="Sprite2D" type="Sprite2D" parent="wall6"]
+visible = false
+position = Vector2(149.5, -933.5)
+scale = Vector2(38.2422, 1.27344)
+texture = ExtResource("3_nev30")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall6"]
+position = Vector2(182, -942)
+scale = Vector2(1.20634, 1.40878)
+shape = SubResource("RectangleShape2D_5rsne")
+
+[node name="TimeMachine" type="Sprite2D" parent="."]
+position = Vector2(22, -82)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_l0wng")
+
+[node name="time_machine1" type="Area2D" parent="TimeMachine"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TimeMachine/time_machine1"]
+position = Vector2(-24, 282)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_kugur")
+
+[connection signal="body_entered" from="TimeMachine/time_machine1" to="chel_geroi_in" method="_on_time_machine_1_body_entered"]
+[connection signal="body_exited" from="TimeMachine/time_machine1" to="chel_geroi_in" method="_on_time_machine_1_body_exited"]

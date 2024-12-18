@@ -1,19 +1,24 @@
-[gd_scene load_steps=4 format=3 uid="uid://01do5ojya4a6"]
+[gd_scene load_steps=6 format=3 uid="uid://01do5ojya4a6"]
 
-[ext_resource type="Texture2D" uid="uid://beunpef8dhg5j" path="res://image/photo_2024-12-15_02-04-32.jpg" id="1_qki5d"]
 [ext_resource type="Script" path="res://script/chel_geroi_in.gd" id="1_scoo8"]
+[ext_resource type="Texture2D" uid="uid://beunpef8dhg5j" path="res://image/викаджян.jpg" id="2_dkqff"]
+[ext_resource type="Texture2D" uid="uid://bptbu37byp1u5" path="res://image/icon.svg" id="3_2o3f2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pd34p"]
 size = Vector2(347, 838)
 
+[sub_resource type="LabelSettings" id="LabelSettings_i0fe3"]
+font_size = 170
+font_color = Color(0, 0, 0, 1)
+
 [node name="chel_geroi_in" type="CharacterBody2D"]
-process_mode = 1
+process_mode = 3
 z_index = 2
 scale = Vector2(0.3, 0.3)
 script = ExtResource("1_scoo8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_qki5d")
+texture = ExtResource("2_dkqff")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1.5, 0)
@@ -21,3 +26,74 @@ shape = SubResource("RectangleShape2D_pd34p")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.7, 0.7)
+
+[node name="pausa" type="Control" parent="."]
+process_mode = 2
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 2250.0
+offset_top = 76.6667
+offset_right = 2250.0
+offset_bottom = 76.6667
+
+[node name="pause_menu" type="Polygon2D" parent="pausa"]
+color = Color(0.270588, 0.435294, 0, 1)
+polygon = PackedVector2Array(-5000, -1623.33, -4993.33, 1466.67, 516.667, 1466.67, 493.333, -1623.33)
+
+[node name="podpis" type="Label" parent="pausa"]
+layout_mode = 0
+offset_left = -4623.33
+offset_top = -1523.33
+offset_right = -380.336
+offset_bottom = -1056.33
+scale = Vector2(1.5, 1.5)
+text = "Slavianskiy byt 2k24 edition pro game"
+label_settings = SubResource("LabelSettings_i0fe3")
+
+[node name="return" type="TouchScreenButton" parent="pausa"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-4176.67, -623.333)
+scale = Vector2(29.1667, 4.42708)
+texture_normal = ExtResource("3_2o3f2")
+
+[node name="return_text" type="Label" parent="pausa"]
+layout_mode = 0
+offset_left = -4080.0
+offset_top = -583.333
+offset_right = 163.0
+offset_bottom = -116.333
+text = "ВЕРНУТЬСЯ НА РОДИНУ, ПИТЬ ВОДУ ИЗ 
+                                                             БАЙКАЛА"
+label_settings = SubResource("LabelSettings_i0fe3")
+
+[node name="return_obvodka" type="Polygon2D" parent="pausa"]
+color = Color(0, 0.658824, 0, 1)
+polygon = PackedVector2Array(-4173.33, -566.667, -4173.33, -116.667, -3870, -56.6667, -753.333, -63.3333, -446.667, -113.333, -443.333, -566.667, -803.333, -623.333, -3850, -620, -3850, -643.333, -803.333, -643.333, -436.667, -586.667, -423.333, -583.333, -423.333, -100, -750, -43.3333, -3873.33, -36.6667, -4196.67, -100, -4196.67, -570)
+
+[node name="exit" type="TouchScreenButton" parent="pausa"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-4150, 353.333)
+scale = Vector2(29.1667, 4.42708)
+texture_normal = ExtResource("3_2o3f2")
+
+[node name="exit_text" type="Label" parent="pausa"]
+layout_mode = 0
+offset_left = -4083.33
+offset_top = 493.333
+offset_right = -530.333
+offset_bottom = 725.333
+text = "ВЫЙТИ ИЗ ИГРЫ, ПОДДЕРЖАТЬ БАЙДЕНА"
+label_settings = SubResource("LabelSettings_i0fe3")
+
+[node name="exit_ovbodka" type="Polygon2D" parent="pausa"]
+position = Vector2(30, 983.333)
+color = Color(1, 0, 0, 1)
+polygon = PackedVector2Array(-4173.33, -566.667, -4173.33, -116.667, -3870, -56.6667, -753.333, -63.3333, -446.667, -113.333, -443.333, -566.667, -803.333, -623.333, -3850, -620, -3850, -643.333, -803.333, -643.333, -436.667, -586.667, -423.333, -583.333, -423.333, -100, -750, -43.3333, -3873.33, -36.6667, -4196.67, -100, -4196.67, -570)
+
+[node name="Polygon2D" type="Polygon2D" parent="pausa"]
+color = Color(1, 0, 0, 1)
+polygon = PackedVector2Array(-4800, -1126.67, 193.333, -1123.33, 410, -1036.67, 193.333, -933.333, -2306.67, -1106.67, -4800, -933.333, -4956.67, -1030)
+
+[connection signal="pressed" from="pausa/return" to="." method="_on_return_pressed"]
+[connection signal="pressed" from="pausa/exit" to="." method="_on_exit_pressed"]

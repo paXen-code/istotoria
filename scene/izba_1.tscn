@@ -1,3 +1,18 @@
-[gd_scene format=3 uid="uid://t1y87qfqpkmb"]
+[gd_scene load_steps=2 format=3 uid="uid://t1y87qfqpkmb"]
+
+[ext_resource type="Texture2D" uid="uid://u5eiuc85lgwa" path="res://image/внутри изба.png" id="2_vwwkj"]
 
 [node name="IZBA1" type="Node2D"]
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(0.0823529, 0.0431373, 0.0431373, 1)
+polygon = PackedVector2Array(-638, -300, -631, 1128, 2020, 1218, 2118, -458)
+
+[node name="ВнутриИзба" type="Sprite2D" parent="."]
+position = Vector2(599, 326)
+scale = Vector2(3, 3)
+texture = ExtResource("2_vwwkj")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(578, 308)
+zoom = Vector2(0.6, 0.6)
