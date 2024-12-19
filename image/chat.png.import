@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxsw4p23wondm"
-path="res://.godot/imported/изба.png-e2a6a65bd6245e83d17b9a50079131a6.ctex"
+uid="uid://bs8as0y7ecysg"
+path="res://.godot/imported/chat.png-d3676376b36df69d155b385d3275cc98.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://image/изба.png"
-dest_files=["res://.godot/imported/изба.png-e2a6a65bd6245e83d17b9a50079131a6.ctex"]
+source_file="res://image/chat.png"
+dest_files=["res://.godot/imported/chat.png-d3676376b36df69d155b385d3275cc98.ctex"]
 
 [params]
 

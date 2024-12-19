@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://01do5ojya4a6"]
+[gd_scene load_steps=7 format=3 uid="uid://01do5ojya4a6"]
 
 [ext_resource type="Script" path="res://script/chel_geroi_in.gd" id="1_scoo8"]
 [ext_resource type="Texture2D" uid="uid://beunpef8dhg5j" path="res://image/викаджян.jpg" id="2_dkqff"]
 [ext_resource type="Texture2D" uid="uid://bptbu37byp1u5" path="res://image/icon.svg" id="3_2o3f2"]
+[ext_resource type="PackedScene" uid="uid://mikeqsmwm4uh" path="res://scene/CanvasLayer.tscn" id="4_61eqm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pd34p"]
 size = Vector2(347, 838)
@@ -30,6 +31,7 @@ zoom = Vector2(0.7, 0.7)
 [node name="pausa" type="Control" parent="."]
 process_mode = 2
 visible = false
+z_index = 5
 layout_mode = 3
 anchors_preset = 0
 offset_left = 2250.0
@@ -94,6 +96,8 @@ polygon = PackedVector2Array(-4173.33, -566.667, -4173.33, -116.667, -3870, -56.
 [node name="Polygon2D" type="Polygon2D" parent="pausa"]
 color = Color(1, 0, 0, 1)
 polygon = PackedVector2Array(-4800, -1126.67, 193.333, -1123.33, 410, -1036.67, 193.333, -933.333, -2306.67, -1106.67, -4800, -933.333, -4956.67, -1030)
+
+[node name="CanvasLayer" parent="." instance=ExtResource("4_61eqm")]
 
 [connection signal="pressed" from="pausa/return" to="." method="_on_return_pressed"]
 [connection signal="pressed" from="pausa/exit" to="." method="_on_exit_pressed"]

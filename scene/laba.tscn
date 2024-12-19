@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://cjg2td8ws7f5m"]
+[gd_scene load_steps=8 format=3 uid="uid://cjg2td8ws7f5m"]
 
 [ext_resource type="Texture2D" uid="uid://c53obn4txg6o6" path="res://image/лаба.jpg" id="1_2odnm"]
+[ext_resource type="Script" path="res://script/laba_chat.gd" id="1_xjy8w"]
 [ext_resource type="PackedScene" uid="uid://01do5ojya4a6" path="res://scene/chel_geroi_in.tscn" id="2_3b13b"]
 [ext_resource type="Texture2D" uid="uid://bptbu37byp1u5" path="res://image/icon.svg" id="3_nev30"]
 [ext_resource type="Texture2D" uid="uid://0m86c7r43n8a" path="res://image/time_machine.png" id="4_l0wng"]
@@ -13,10 +14,12 @@ radius = 98.0
 height = 300.0
 
 [node name="laba" type="Node2D"]
+script = ExtResource("1_xjy8w")
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
-position = Vector2(-653, -378)
-polygon = PackedVector2Array(-638, -300, -631, 1128, 2020, 1218, 2118, -458)
+position = Vector2(-980.852, -394)
+scale = Vector2(1.17116, 1)
+polygon = PackedVector2Array(-924, -724, -850, 1560, 2357, 1468, 2529, -754)
 
 [node name="Photo2024-12-1723-59-13" type="Sprite2D" parent="."]
 position = Vector2(-23, 1)
@@ -28,94 +31,96 @@ position = Vector2(161, 38)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="wall" type="StaticBody2D" parent="."]
+[node name="wallls" type="Node2D" parent="."]
+
+[node name="wall" type="StaticBody2D" parent="wallls"]
 position = Vector2(-581, 1218)
 rotation = 0.349066
 scale = Vector2(0.08, 1)
 
-[node name="Sprite2D" type="Sprite2D" parent="wall"]
+[node name="Sprite2D" type="Sprite2D" parent="wallls/wall"]
 visible = false
 position = Vector2(149.5, -933.5)
 scale = Vector2(38.2422, 1.27344)
 texture = ExtResource("3_nev30")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="wall"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wallls/wall"]
 position = Vector2(182, -942)
 shape = SubResource("RectangleShape2D_5rsne")
 
-[node name="wall2" type="StaticBody2D" parent="."]
+[node name="wall2" type="StaticBody2D" parent="wallls"]
 position = Vector2(215, 1282)
 rotation = -0.174533
 scale = Vector2(0.0706676, 0.990918)
 
-[node name="Sprite2D" type="Sprite2D" parent="wall2"]
+[node name="Sprite2D" type="Sprite2D" parent="wallls/wall2"]
 visible = false
 position = Vector2(149.5, -933.5)
 scale = Vector2(38.2422, 1.27344)
 texture = ExtResource("3_nev30")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="wall2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wallls/wall2"]
 position = Vector2(182, -942)
 shape = SubResource("RectangleShape2D_5rsne")
 
-[node name="wall3" type="StaticBody2D" parent="."]
+[node name="wall3" type="StaticBody2D" parent="wallls"]
 position = Vector2(1243, 1774)
 rotation = -0.698132
 scale = Vector2(0.117005, 2.68857)
 
-[node name="Sprite2D" type="Sprite2D" parent="wall3"]
+[node name="Sprite2D" type="Sprite2D" parent="wallls/wall3"]
 visible = false
 position = Vector2(149.5, -933.5)
 scale = Vector2(38.2422, 1.27344)
 texture = ExtResource("3_nev30")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="wall3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wallls/wall3"]
 position = Vector2(182, -942)
 shape = SubResource("RectangleShape2D_5rsne")
 
-[node name="wall4" type="StaticBody2D" parent="."]
+[node name="wall4" type="StaticBody2D" parent="wallls"]
 position = Vector2(923, 961)
 rotation = -0.698132
 scale = Vector2(0.0706676, 0.990918)
 
-[node name="Sprite2D" type="Sprite2D" parent="wall4"]
+[node name="Sprite2D" type="Sprite2D" parent="wallls/wall4"]
 visible = false
 position = Vector2(149.5, -933.5)
 scale = Vector2(38.2422, 1.27344)
 texture = ExtResource("3_nev30")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="wall4"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wallls/wall4"]
 position = Vector2(182, -942)
 shape = SubResource("RectangleShape2D_5rsne")
 
-[node name="wall5" type="StaticBody2D" parent="."]
+[node name="wall5" type="StaticBody2D" parent="wallls"]
 position = Vector2(1367, -177)
 rotation = -1.74533
 scale = Vector2(0.0706676, 0.990918)
 
-[node name="Sprite2D" type="Sprite2D" parent="wall5"]
+[node name="Sprite2D" type="Sprite2D" parent="wallls/wall5"]
 visible = false
 position = Vector2(149.5, -933.5)
 scale = Vector2(38.2422, 1.27344)
 texture = ExtResource("3_nev30")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="wall5"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wallls/wall5"]
 position = Vector2(182, -942)
 scale = Vector2(1.20634, 1.40878)
 shape = SubResource("RectangleShape2D_5rsne")
 
-[node name="wall6" type="StaticBody2D" parent="."]
+[node name="wall6" type="StaticBody2D" parent="wallls"]
 position = Vector2(558, -1303)
-rotation = 0.349066
-scale = Vector2(-0.118339, -1.15864)
+rotation = -2.79253
+scale = Vector2(0.118339, 1.15864)
 
-[node name="Sprite2D" type="Sprite2D" parent="wall6"]
+[node name="Sprite2D" type="Sprite2D" parent="wallls/wall6"]
 visible = false
 position = Vector2(149.5, -933.5)
 scale = Vector2(38.2422, 1.27344)
 texture = ExtResource("3_nev30")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="wall6"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wallls/wall6"]
 position = Vector2(182, -942)
 scale = Vector2(1.20634, 1.40878)
 shape = SubResource("RectangleShape2D_5rsne")

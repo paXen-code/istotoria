@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://d20pypc5clcp3"]
+[gd_scene load_steps=12 format=3 uid="uid://d20pypc5clcp3"]
 
+[ext_resource type="Script" path="res://script/npc_chat.gd" id="1_p438w"]
 [ext_resource type="Texture2D" uid="uid://b7g338uvnsfuc" path="res://image/кароч картинка для этого самого трава там туда-сюда-Photoroom.png" id="1_xww3o"]
 [ext_resource type="PackedScene" uid="uid://01do5ojya4a6" path="res://scene/chel_geroi_in.tscn" id="2_bqj2u"]
 [ext_resource type="Texture2D" uid="uid://bptbu37byp1u5" path="res://image/icon.svg" id="3_ntboj"]
 [ext_resource type="Texture2D" uid="uid://0m86c7r43n8a" path="res://image/time_machine.png" id="4_pmhsb"]
+[ext_resource type="Texture2D" uid="uid://b47rhrfmxtt4i" path="res://image/крестьянин.png" id="6_5munl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_euxgn"]
 texture = ExtResource("1_xww3o")
@@ -67,9 +69,13 @@ height = 164.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3dueq"]
 size = Vector2(4885, 159)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_me73n"]
+radius = 556.706
+
 [node name="play" type="Node2D"]
 process_mode = 3
 position = Vector2(48, 24)
+script = ExtResource("1_p438w")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_g5yla")
@@ -201,5 +207,16 @@ position = Vector2(2284, 2063)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_pmhsb")
 
+[node name="npc" type="Area2D" parent="."]
+position = Vector2(1612, 2063)
+scale = Vector2(0.6, 0.6)
+
+[node name="Крестьянин" type="Sprite2D" parent="npc"]
+texture = ExtResource("6_5munl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="npc"]
+shape = SubResource("CircleShape2D_me73n")
+
 [connection signal="body_entered" from="Area2D" to="chel_geroi_in" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="chel_geroi_in" method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="npc" to="." method="_on_npc_body_entered"]

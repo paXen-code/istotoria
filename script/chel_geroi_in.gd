@@ -20,17 +20,19 @@ func _physics_process(_delta):
 		get_tree().paused = true
 		pause = true
 		$pausa.show()
+		$CanvasLayer.hide()
 	elif Input.is_action_just_pressed('ui_cancel') and pause:
 		get_tree().paused = false
 		pause = false
 		$pausa.hide()
+		$CanvasLayer.show()
 
 func _input(event):
 	if event is InputEventKey:
 		if event.keycode == 69:
 			if zona_izby:
 				zona_izby = false
-				get_parent().get_parent().get_tree().change_scene_to_file("res://scene/izba_1.tscn")
+				get_parent().get_parent().get_tree().change_scene_to_file("res://scene/izba.tscn")
 			elif zona_time:
 				zona_time = false
 				get_parent().get_parent().get_tree().change_scene_to_file("res://scene/play.tscn")
@@ -54,3 +56,4 @@ func _on_time_machine_1_body_entered(_body):
 
 func _on_time_machine_1_body_exited(_body):
 	zona_time = false
+
